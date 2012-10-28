@@ -8,9 +8,7 @@ abstract class Kohana_Ckeditor
     {
         if ( ! isset(self::$_instance))
         {
-            $file = Kohana::find_file('vendor', 'ckeditor/ckeditor_php5');
-
-            if (file_exists($file))
+            if ( $file = Kohana::find_file('vendor', 'ckeditor/ckeditor_php5') )
             {
                 $config = Kohana::$config->load('kckeditor')->as_array();
                 include_once $file;
