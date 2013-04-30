@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 return array(
-    'base_path' => URL::base().'ckeditor/',
+    'base_path' => URL::base().'modules/ckeditor/',
     'config' => array(
         'language' => 'ru',
         'toolbar' => array(
