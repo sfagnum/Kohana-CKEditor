@@ -6,19 +6,12 @@ abstract class Kohana_Ckeditor
 
     public static function instance()
     {
-        if ( ! isset(self::$_instance))
+        if (! isset(self::$_instance))
         {
-            if ( $file = Kohana::find_file('vendor', 'ckeditor/ckeditor_php5') )
-            {
-                $config = Kohana::$config->load('kckeditor')->as_array();
-                include_once $file;
-                self::$_instance = new CKEditor($config['base_path']);
-                self::$_instance->config = $config['config'];
-            }
-            else
-            {
-                throw new Kohana_Exception("Can't find file ckeditor_php5.php") ;
-            }
+            $config = Kohana::$config->load('ckeditor')->as_array();
+            self::$_instance = new Editor_Ckeditor($config['base_path']);
+            self::$_instance->config = $config['config'];
+
         }
         return self::$_instance;
     }
