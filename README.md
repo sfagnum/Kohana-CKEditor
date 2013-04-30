@@ -3,7 +3,7 @@ Kohana-CKEditor
 
 integration module of CKEditor for Kohana 3.3
 
-## Exaple
+## Example
 In you controller:
 ```php
 class Controller_Abstract extends Controller_Template
