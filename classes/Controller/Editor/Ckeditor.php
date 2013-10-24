@@ -1,11 +1,4 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * Created by JetBrains PhpStorm.
- * User: sfagnum
- * Date: 30.04.13
- * Time: 17:40
- * To change this template use File | Settings | File Templates.
- */
 
 class Controller_Editor_Ckeditor extends Controller
 {

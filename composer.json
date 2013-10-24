@@ -1,0 +1,20 @@
+{
+	"name" : "sfagnum/kohana-ckeditor",
+	"type" : "kohana-module",
+	"description" : "Integration module of CKEditor to Kohana framework.",
+	"keywords" : ["kohana", "ckeditor", "kohana module"],
+	"homepage" : "https://github.com/sfagnum/Kohana-CKEditor",
+	"license" : "Apache-2.0",
+	"authors" : [
+		{
+			"name" : "Andrey Chernykh",
+			"email" : "sfagnum007@gmail.com",
+			"role" : "Developer"
+		}
+	],
+	"require" : {
+		"php" : ">=5.3.0",
+		"composer/installers" : "*",
+		"kohana/core" : ">=3.3"
+	}
+}
