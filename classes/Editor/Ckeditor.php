@@ -1,22 +1,15 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-/**
- * Created by JetBrains PhpStorm.
- * User: sfagnum
- * Date: 13.03.12
- * Time: 14:26
- * To change this template use File | Settings | File Templates.
- */
 
 class Editor_Ckeditor
 {
     /**
     	 * The version of %CKEditor.
     	 */
-    	const version = '3.6.2';
+    	const version = '4.3';
     	/**
     	 * A constant string unique for each release of %CKEditor.
     	 */
-    	const timestamp = 'B8DJ5M3';
+    	const timestamp = 'B8DJ5M4';
 
     	/**
     	 * URL to the %CKEditor installation directory (absolute or relative to document root).
@@ -70,7 +63,7 @@ class Editor_Ckeditor
     	 * A string indicating the creation date of %CKEditor.
     	 * Do not change it unless you want to force browsers to not use previously cached version of %CKEditor.
     	 */
-    	public $timestamp = "B8DJ5M3";
+    	public $timestamp = "B8DJ5M4";
     	/**
     	 * An array that holds event listeners.
     	 */
@@ -515,34 +508,6 @@ class Editor_Ckeditor
     	 */
     	private function jsEncode($val)
     	{
-    		if (is_null($val)) {
-    			return 'null';
-    		}
-    		if (is_bool($val)) {
-    			return $val ? 'true' : 'false';
-    		}
-    		if (is_int($val)) {
-    			return $val;
-    		}
-    		if (is_float($val)) {
-    			return str_replace(',', '.', $val);
-    		}
-    		if (is_array($val) || is_object($val)) {
-    			if (is_array($val) && (array_keys($val) === range(0,count($val)-1))) {
-    				return '[' . implode(',', array_map(array($this, 'jsEncode'), $val)) . ']';
-    			}
-    			$temp = array();
-    			foreach ($val as $k => $v){
-    				$temp[] = $this->jsEncode("{$k}") . ':' . $this->jsEncode($v);
-    			}
-    			return '{' . implode(',', $temp) . '}';
-    		}
-    		// String otherwise
-    		if (strpos($val, '@@') === 0)
-    			return substr($val, 2);
-    		if (strtoupper(substr($val, 0, 9)) == 'CKEDITOR.')
-    			return $val;
-
-    		return '"' . str_replace(array("\\", "/", "\n", "\t", "\r", "\x08", "\x0c", '"'), array('\\\\', '\\/', '\\n', '\\t', '\\r', '\\b', '\\f', '\"'), $val) . '"';
+    		return json_encode($val);
     	}
 }

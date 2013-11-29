@@ -2,20 +2,29 @@
 
 return array(
     'base_path' => URL::base().'modules/ckeditor/',
-    'config' => array(
-        'language' => 'ru',
-        'toolbar' => array(
-            array('Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'),
-            array('Source', '-', 'Save' ),
-            array('Image', 'Flash', 'Table', 'HorizontalRule'),
-            array('TextColor', 'BGColor'),
-            array('Link', 'Unlink'),
+    'config'    => array(
+        //'toolbar'          => 'Standart',
+        'language'         => 'ru',
+        'width'            => 650,
+        'height'           => 250,
+
+        'removeDialogTabs' => '',
+
+        'toolbarGroups'          => array(
+            array('name' => 'clipboard', 'groups' => array('clipboard', 'undo')),
+            array('name' => 'editing', 'groups' => array('find', 'selection', 'spellchecker')),
+            array('name' => 'links'),
+            array('name' => 'insert'),
+            array('name' => 'forms'),
+            array('name' => 'tools'),
+            array('name' => 'document', 'groups' => array('mode', 'document', 'doctools')),
+            array('name' => 'others'),
             '/',
-            array('Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'),
-            array('NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'),
-            array('Format', 'Font', 'FontSize')
-        ),
-        'width' => 650,
-        'height' => 250
+            array('name' => 'basicstyles', 'groups' => array('basicstyles', 'cleanup')),
+            array('name' => 'paragraph', 'groups' => array('list', 'indent', 'blocks', 'align', 'bidi')),
+            array('name' => 'styles'),
+            array('name' => 'colors'),
+            array('name' => 'about')
+        )
     )
 );
